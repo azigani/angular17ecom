@@ -1,0 +1,41 @@
+<form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+  <mat-form-field>
+    <input matInput placeholder="Nom" formControlName="nom">
+    <mat-error *ngIf="userForm?.get('nom')?.invalid">Le nom est requis.</mat-error>
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput placeholder="Prénom" formControlName="prenom">
+    <mat-error *ngIf="userForm?.get('prenom')?.invalid">Le prénom est requis.</mat-error>
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput placeholder="Nom d'utilisateur" formControlName="username">
+    <mat-error *ngIf="userForm?.get('username')?.invalid">Le nom d'utilisateur est requis.</mat-error>
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput placeholder="Mot de passe" formControlName="motDePasse" type="password">
+    <mat-error *ngIf="userForm?.get('motDePasse')?.invalid">Le mot de passe est requis.</mat-error>
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput placeholder="Email" formControlName="email">
+    <mat-error *ngIf="userForm?.get('email')?.invalid">Veuillez saisir une adresse email valide.</mat-error>
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput placeholder="URL de l'image de profil" formControlName="profileImageUrl">
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Rôle</mat-label>
+    <mat-select formControlName="role">
+      <mat-option value="ROLE_USER">Utilisateur</mat-option>
+      <mat-option value="ROLE_ADMIN">Administrateur</mat-option>
+    </mat-select>
+    <mat-error *ngIf="userForm?.get('role')?.invalid">Le rôle est requis.</mat-error>
+  </mat-form-field>
+
+  <button mat-raised-button color="primary" type="submit" [disabled]="userForm.invalid">Ajouter</button>
+</form>

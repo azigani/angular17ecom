@@ -1,0 +1,90 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menu Professionnel</title>
+
+</head>
+
+<body class="background">
+<div class="content">
+  <ul class="exo-menu">
+    <li><a class="active" routerLink="/admin/dashboard"><i class="fa fa-home"></i> Accueil</a></li>
+    <li><a routerLink="/admin/admin-login" (click)="onLogin()"><i class="fa fa-arrow-circle-down"></i> Se Connecter</a></li>
+    <li class="active" class="drop-down"><a><i class="fa fa-cogs"></i> Utilisateurs</a>
+      <ul class="drop-down-ul animated fadeIn">
+        <li class="flyout-right">
+          <a  routerLink="/admin/crud-utilisateurs-admin">Gestion des Utilisateurs</a>
+          <ul class="animated fadeIn">
+            <li><a routerLink="/admin/crud-utilisateurs-admin">Ajouter Utilisateur</a></li>
+            <li><a routerLink="/admin/crud-utilisateurs-admin">Modifier</a></li>
+            <li><a routerLink="/admin/crud-utilisateurs-admin">Supprimer</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+        <li class="drop-down"><a><i class="fa fa-cogs"></i>Commandes</a>
+          <ul class="drop-down-ul animated fadeIn">
+            <li class="flyout-right">
+              <a routerLink="/commandes/ajouter">Gestion des commandes</a>
+              <ul class="animated fadeIn">
+                <li><a routerLink="/commandes/ajouter">Ajouter une commande</a></li>
+                <li><a routerLink="/commandes/modifier">Modifier la commande</a></li>
+                <li><a routerLink="/commandes/liste" >Liste la commande</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li class="drop-down"><a><i class="fa fa-cogs"></i>Produits</a>
+          <ul class="drop-down-ul animated fadeIn">
+            <li class="flyout-right">
+              <a routerLink="/produits/ajouter">Gestion des Produits</a>
+              <ul class="animated fadeIn">
+                <li><a routerLink="/produits/ajouter">Ajouter un produit</a></li>
+                <li><a routerLink="/produits/modifier">Modifier produit</a></li>
+                <li><a routerLink="/produits/liste" >Liste produits</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li class="drop-down"><a><i class="fa fa-cogs"></i>Mon Panier</a>
+          <ul class="drop-down-ul animated fadeIn">
+            <li class="flyout-right">
+              <a routerLink="/paniers/ajouter">Gestion de panier</a>
+              <ul class="animated fadeIn">
+                <li><a routerLink="/paniers/ajouter">Ajouter un panier</a></li>
+                <li><a routerLink="/paniers/modifier">Modifier le panier</a></li>
+                <li><a routerLink="/paniers/liste" >Liste</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li class="drop-down"><a><i class="fa fa-cogs"></i>Connexion/Deconnexion</a>
+          <ul class="drop-down-ul animated fadeIn">
+            <li class="flyout-right">
+              <a routerLink="/admin/admin-login">Connexion/Deconnexion</a>
+              <ul class="animated fadeIn">
+                <button  mat-menu-item>
+                  <mat-icon>exit_to_app</mat-icon>
+                  Se déconnecter
+                </button>
+                <button  mat-menu-item>
+                  <mat-icon>edit</mat-icon>
+                  Changer de mot de passe
+                </button>
+              </ul>
+
+            </li>
+          </ul>
+        </li>
+
+        <a class="active" routerLink="/admin/dashboard" class="toggle-menu visible-xs-block">|||</a>
+      </ul>
+    </div>
+    </body>
+    </html>

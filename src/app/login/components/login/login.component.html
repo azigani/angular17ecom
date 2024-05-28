@@ -1,0 +1,42 @@
+<div class="wrapper">
+  <form  [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <h1>Connexion</h1>
+
+    <mat-form-field appearance="fill">
+      <mat-label> Username:</mat-label>
+      <input matInput type="text" formControlName="username" required>
+      <mat-icon matSuffix>account_circle</mat-icon>
+      <!--      <mat-error *ngIf="loginForm?.get('username')?.errors && loginForm?.get('username').errors['email']">-->
+      <!--        Cet email est invalide!-->
+      <!--      </mat-error>-->
+            <mat-error *ngIf="loginForm?.get('username')?.invalid ?? false">
+              Ce champ est obligatoire!
+            </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label> Mot de Passe:</mat-label>
+      <input matInput type="password" formControlName="motDePasse" required>
+      <mat-icon matSuffix [matTooltip]="passwordVisible ? 'Hide Password' : 'Show Password'"
+                (click)="togglePasswordVisibility()">
+        {{ passwordVisible ? 'visibility_off' : 'visibility' }}
+      </mat-icon>
+            <mat-error *ngIf="loginForm?.get('motDePasse')?.errors ?? false">
+             La taille minimum est de 6.
+            </mat-error>
+    </mat-form-field>
+    <button mat-raised-button type="submit" color="accent">Se connecter!</button>
+  </form>
+
+  <p>
+    <button mat-raised-button color="warn" (click)="loginWithGoogle()">
+      Login with Google
+    </button>
+  </p>
+</div>
+
+
+
+
+
+<router-outlet></router-outlet>
